@@ -15,3 +15,7 @@ response = requests.post(url,data=pload)
 if response.status_code==201:
     data=response.json()
     print(data)
+
+response=requests.put(url,data=pload)
+
+response=requests.patch(url,data=pload)

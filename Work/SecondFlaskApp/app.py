@@ -4,7 +4,7 @@ from flask import Flask,request,render_template,jsonify,session,redirect,url_for
 app = Flask(__name__)
 app.secret_key = 'your_secret_key' #for session management
 users = []
-@app.route('/signup',methods=['GET','POST'])
+@app.route('/signup',methods=['GET','POST','PUT'])
 def signup():
     if request.method == 'POST':
         user_data = {
@@ -70,12 +70,30 @@ def dashboard():
         return redirect(url_for('login'))
     return render_template('dashboard.html',users=users)
 
-
 @app.route('/logout')
 def logout():
     session.pop('user',None)
     return redirect(url_for('login'))
-
+# @app.route('/update_user', method=['PUT','PATCH','PUT'])
+# def update_user():
+#     update_fname=request.form['update_name']
+#     user = next((i for i in users if i['email_id'] == session.get('email_id') and i['password'] == session.get('password')), None)
+#     if 'user' not in session:
+#         return url_for('login')
+#     if request.method is 'PATCH':
+#             user.update({"first_name":update_fname})
+#     if request.method is 'PUT':
+#         user_data = {
+#             "first_name": request.form['first_name'],
+#             "last_name": request.form['last_name'],
+#             "password": request.form['password'],
+#             "confirm_password": request.form['confirm_password'],
+#             "email_id": request.form['email_id'],
+#             "phone_no": request.form['phone_no'],
+#             "manager_name": request.form['manager_name'],
+#         }
+#         user.update(user_data)
+#     return jsonify(user)
 
 if __name__ == '__main__':
     app.run(debug=True,port=5000)
