@@ -1,0 +1,12 @@
+{
+    "krishna": {
+        "username": "krishna",
+        "email": "K@gmail.com",
+        "password": "scrypt:32768:8:1$hYyF4mzayqe6UVZD$76ec874d76af65a06134cd942f83ca5c84e6860b3a987d5f537f9d78476c491cd4c5ebf30c1dea144fc1233c0cdcd04cf4a129958ac7a4cdc6f326cbd2404137"
+    },
+    "vishal": {
+        "username": "vishal",
+        "email": "v@gmail.com",
+        "password": "scrypt:32768:8:1$jMmAzMdXgJ3yWw1H$96537c42c81c3c56c69b1a304c52b7a8bbf8dedd404d6ec4c53de9f87e6c33e1ca26ab9c8acfc25cff0a61fa2d0e90e0c55b78102cc72acca0c08b9213a61ffd"
+    }
+}
